@@ -1,0 +1,94 @@
+/* Center the Form */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Form Container */
+form {
+  background-color: #ffffff;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  width: 720px;
+  padding: 30px 50px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Headings */
+h2 {
+  text-align: center;
+  color: #c0392b;
+  margin-bottom: 20px;
+}
+h3 {
+  color: #c0392b;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+/* Label & Input alignment */
+label {
+  display: inline-block;
+  width: 200px;
+  vertical-align: middle;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 55%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+/* Keep everything inline */
+input[type="radio"],
+input[type="checkbox"] {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* Textarea */
+textarea {
+  width: 80%;
+  resize: vertical;
+}
+
+/* Buttons */
+.buttons {
+  text-align: center;
+  margin-top: 25px;
+}
+
+button {
+  background-color: #fcfcfc;
+  color: rgb(19, 1, 1);
+  border: 10;
+  border-radius: 4px;
+  padding: 10px 25px;
+  margin: 0 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+
+
+/* Paragraph text */
+p {
+  margin: 10px 0 6px;
+  font-size: 14px;
+}
