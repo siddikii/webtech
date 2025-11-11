@@ -1,94 +1,312 @@
-/* Center the Form */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f3f3f3;
+:root{
+  --form-width: 700px;
+  --form-bg: #e9e9e9;
+  --panel-bg: #f2f2f2;
+  --accent: #d8352a; /* red accent similar to picture */
+  --label-width: 160px;
+  --input-width: 360px;
+  --font: "Arial", Helvetica, sans-serif;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: var(--font);
+  background: #fff;
+  display:flex;
+  justify-content:center;
+  padding:18px 0;
+  color:#222;
+  font-size:14px;
+}
+
+/* big outer frame like in the picture */
+.page-frame{ display:flex; width:100%; max-width:1100px; align-items:flex-start; gap:12px;}
+.outer-border-left, .outer-border-right{
+  width:24px; border:1px solid #000;
+  min-height:40px;
+  background: #fff;
+}
+.form-wrapper{
+  width:var(--form-width);
+  background:var(--form-bg);
+  padding:18px 26px 28px 26px;
+  border: 1px solid #bdbdbd;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.02) inset;
+}
+
+/* top notes */
+.top-note{ font-size:12px; color:#444; margin-bottom:8px; }
+.steps{ color:#333; font-weight:600; margin-bottom:12px; }
+
+/* headings */
+.section-title{
+  color:var(--accent);
+  margin:10px 0 12px 0;
+  font-size:18px;
+  font-weight:700;
+}
+
+/* grid for labels and inputs */
+.form-grid, .honor-grid{
+  display:grid;
+  grid-template-columns: var(--label-width) 1fr;
+  gap:8px 12px;
+  align-items:center;
+}
+
+/* label style */
+.form-grid label,
+.honor-grid label,
+.add-grid label{
+  text-align:right;
+  padding-right:8px;
+  font-weight:700;
+  font-size:13px;
+  color:#222;
+}
+
+/* inputs style */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+select,
+textarea{
+  width:100%;
+  max-width: var(--input-width);
+  padding:6px 8px;
+  border:1px solid #8f8f8f;
+  background:#fff;
+  border-radius:2px;
+  font-size:14px;
+}
+
+/* smaller inputs */
+.small-input{ width:120px; display:inline-block; margin-left:8px; }
+.tiny-input{ width:70px; display:inline-block; margin:0 6px; }
+
+/* donation block */
+.donation-block{ margin-top:14px; margin-bottom:8px; }
+.donation-row{ display:flex; align-items:center; gap:12px; margin-bottom:6px; }
+.donation-label{ width:var(--label-width); display:inline-block; font-weight:700; text-align:right; margin-right:12px; }
+.donation-controls{ flex:1; }
+
+.inline-radio{ margin-right:10px; font-weight:600; font-size:13px; color:#222; }
+.other-amt{ margin-left:12px; font-weight:600; }
+
+/* recurring */
+.recurring-row{ display:flex; align-items:center; gap:12px; margin-top:6px; }
+.checkbox-inline{ font-weight:600; }
+
+/* honor grid specifics */
+.honor-top{ grid-column:1/3; display:flex; align-items:center; gap:12px; margin-bottom:6px; }
+.honor-grid label{ font-weight:700; }
+
+/* additional info area */
+.help-text{ margin-top:0; margin-bottom:8px; font-size:13px; color:#333; grid-column:1/3; }
+
+/* checkbox list & comments */
+.checkbox-list{ margin:10px 0 12px 0; padding-left:20px; color:#222; }
+.comments-block{ display:grid; grid-template-columns: var(--label-width) 1fr; gap:8px 12px; align-items:start; margin-bottom:8px;}
+.comments-block label{ text-align:right; font-weight:700; padding-right:8px; }
+.comments-block textarea{ width:100%; resize:vertical; }
+
+/* contact block */
+.contact-block{ margin-top:6px; }
+.contact-label{ display:block; font-weight:700; margin-bottom:6px; text-align:left; margin-left: var(--label-width); }
+.contact-options{ margin-left: var(--label-width); display:flex; gap:14px; flex-wrap:wrap; }
+
+/* volunteer line */
+.volunteer-line{ margin:10px 0 6px 0; margin-left: var(--label-width); }
+
+/* buttons */
+.buttons{
+  display:flex;
+  gap:10px;
+  justify-content:flex-start;
+  margin-top:14px;
+  margin-left: var(--label-width);
+}
+.btn{
+  padding:6px 18px;
+  border-radius:14px;
+  border:1px solid #9c9c9c;
+  background:#f5f5f5;
+  font-weight:700;
+  cursor:pointer;
+}
+.btn:hover{ box-shadow:0 1px 2px rgba(0,0,0,0.08); transform:translateY(-1px); }
+
+/* secure note */
+.secure-note{ margin-top:12px; font-size:13px; color:#333; margin-left: var(--label-width); }
+
+/* small helpers */
+.small-text{ font-size:13px; color:#333; margin-right:8px; }
+
+
+/* Donation block */
+.donation-row {
   display: flex;
-  justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  margin: 0;
+  gap: 12px;
+  margin-bottom: 6px;
 }
 
-/* Form Container */
-form {
-  background-color: #ffffff;
-  border: 2px solid #ccc;
-  border-radius: 6px;
-  width: 720px;
-  padding: 30px 50px;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+.donation-controls {
+  display: flex;       /* horizontal layout */
+  flex-wrap: wrap;     /* wrap if screen too small */
+  gap: 10px;
 }
 
-/* Headings */
-h2 {
-  text-align: center;
-  color: #c0392b;
-  margin-bottom: 20px;
+.other-amount-row {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
 }
-h3 {
-  color: #c0392b;
-  margin-top: 25px;
+
+.other-amount-row .donation-label {
+  width: var(--label-width);
+}
+
+.other-amt input {
+  margin-left: 6px;
+  width: 120px;
+}
+
+
+/* Contact section */
+.contact-options,
+.newsletter-options {
+  display: flex;
+  flex-direction: column;  /* stack vertically */
+  gap: 6px;                /* space between checkboxes */
+  margin-left: var(--label-width); /* align with inputs */
+}
+
+/* Newsletter text */
+.newsletter-text {
+  margin-left: 0;           /* start from left edge */
+  color: #555;              /* slightly less visible */
+  font-size: 13px;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+
+/* Center the label and input horizontally */
+.center-row {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center;     /* vertical alignment */
+  gap: 8px;                /* space between label and input */
+  margin-top: 6px;
   margin-bottom: 10px;
 }
 
-/* Label & Input alignment */
-label {
-  display: inline-block;
-  width: 200px;
-  vertical-align: middle;
-  margin-bottom: 8px;
-  white-space: nowrap;
-  font-size: 14px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-select,
-textarea {
-  width: 55%;
-  padding: 6px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-  vertical-align: middle;
-  box-sizing: border-box;
-}
-
-/* Keep everything inline */
-input[type="radio"],
-input[type="checkbox"] {
-  vertical-align: middle;
-  margin-right: 5px;
-}
-
-/* Textarea */
-textarea {
-  width: 80%;
-  resize: vertical;
-}
-
-/* Buttons */
-.buttons {
-  text-align: center;
-  margin-top: 25px;
-}
-
-button {
-  background-color: #fcfcfc;
-  color: rgb(19, 1, 1);
-  border: 10;
-  border-radius: 4px;
-  padding: 10px 25px;
-  margin: 0 10px;
-  font-size: 15px;
-  cursor: pointer;
+/* Optional: make the input a bit wider */
+.center-row input {
+  width: 250px;
+  max-width: 80%;
 }
 
 
-
-/* Paragraph text */
-p {
-  margin: 10px 0 6px;
-  font-size: 14px;
+.recurring-block {
+  margin-top: 8px;
 }
+
+/* First line: label + checkbox horizontally */
+.recurring-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Make label same width as other form labels */
+.recurring-line .contact-label {
+  width: var(--label-width);
+  font-weight: 700;
+  text-align: right;
+}
+
+/* Second line: monthly inputs */
+.monthly-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: var(--label-width); /* align inputs with form fields */
+  margin-top: 4px;
+}
+
+/* Monthly line: centered and same style as helper text */
+.centered-text {
+  display: flex;
+  justify-content: center;  /* center horizontally */
+  align-items: center;
+  gap: 6px;                 /* space between text and inputs */
+  color: #333;              /* same as helper text */
+  font-size: 13px;          /* match helper text size */
+  font-weight: 500;         /* slightly lighter, same as helper text */
+  margin-top: 6px;
+}
+
+/* Adjust tiny input boxes */
+.centered-text input.tiny-input {
+  width: 70px; /* keep small, same as before */
+}
+
+
+.recurring-block {
+  margin-top: 8px;
+}
+
+/* First line: label + checkbox horizontally */
+.recurring-line {
+  display: flex;
+  align-items: center;     /* vertical alignment */
+  gap: 12px;               /* space between label and checkbox */
+}
+
+.recurring-label {
+  font-weight: 700;
+  min-width: var(--label-width); /* aligns with other labels in form */
+  text-align: right;
+}
+
+.recurring-checkbox {
+  display: flex;
+  align-items: center;     /* keeps checkbox and text on same line */
+  gap: 6px;
+}
+
+/* Second line: monthly donation, centered */
+.monthly-line {
+  display: flex;
+  justify-content: center; /* center the whole line horizontally */
+  align-items: center;
+  gap: 6px;
+  color: #333;
+  font-size: 13px;         /* same as helper text */
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+.monthly-line input.tiny-input {
+  width: 70px;
+}
+
+.bold-text {
+    font-weight: 700; /* bold */
+}
+
+.normal-text {
+    font-weight: 400; /* normal weight */
+}
+.secure-note {
+    margin-left: 0;  /* remove left margin so it starts from the left edge */
+    margin-top: 12px;
+    font-size: 13px;
+    color: #333;
+}
+
+
