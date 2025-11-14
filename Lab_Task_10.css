@@ -1,0 +1,103 @@
+/* PAGE */
+body {
+    font-family: Georgia, serif;
+    padding: 40px;
+}
+
+/* TITLE */
+h1 {
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+/* FORM ROW */
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+/* LABEL */
+.label {
+    font-size: 25px;
+}
+
+/* INPUT */
+#student-name {
+    padding: 10px;
+    width: 300px;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+/* ADD BUTTON */
+#add-btn {
+    padding: 15px 35px;
+    font-size: 22px;
+    background: #b4d9e7;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/* STUDENT LIST HEADING */
+h2 {
+    font-size: 42px;
+    margin-bottom: 30px;
+}
+
+/* LIST STYLE */
+#student-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* STUDENT ITEM */
+.student-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* HIGHLIGHT = yellow full width */
+.highlight {
+    background: yellow;
+}
+
+/* EDIT BUTTON */
+.btn-edit {
+    padding: 15px 20px;
+    font-size: 20px;
+    background: #b4d9e7;
+    border: none;
+    border-radius: 10px;
+    color: blue;
+    cursor: pointer;
+}
+
+/* DELETE BUTTON */
+.btn-delete {
+    padding: 15px 20px;
+    font-size: 20px;
+    background: #b4d9e7;
+    border: none;
+    border-radius: 10px;
+    color: red;
+    cursor: pointer;
+}
+
+/* HIGHLIGHT BUTTON */
+#highlight-btn {
+    margin-top: 40px;
+    padding: 20px 40px;
+    font-size: 30px;
+    background: #b4d9e7;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
