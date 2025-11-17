@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library Management System</title>
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            font-size: 40px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            font-size: 20px;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+        .old-book {
+            background-color: #e6e6e6; /* light gray */
+        }
+        .new-book {
+            background-color: #98fb98; /* light green */
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Library Management System</h1>
+
+    <label>Book Title:</label>
+    <input type="text" id="title" placeholder="Enter book title">
+
+    <label>Publication Year:</label>
+    <input type="text" id="year" placeholder="Enter publication year">
+
+    <button onclick="addBook()">Add Book</button>
+
+    <h2>Book List</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody id="bookTable"></tbody>
+    </table>
+
+    <!-- Internal JavaScript -->
+    <script>
+        function addBook() {
+            let title = document.getElementById("title").value.trim();
+            let year = document.getElementById("year").value.trim();
+            let currentYear = new Date().getFullYear();
+
+            // Title validation
+            if (title === "" || !/^[A-Za-z]+$/.test(title)) {
+                alert("Title must contain only letters and cannot be empty.");
+                return;
+            }
+
+            // Year validation
+            if (!/^\d{4}$/.test(year) || year < 1900 || year > currentYear) {
+                alert("Year must be a valid 4-digit number between 1900 and " + currentYear);
+                return;
+            }
+
+            // Create table row
+            let table = document.getElementById("bookTable");
+            let row = document.createElement("tr");
+
+            // Color based on year
+            if (year < 2000) {
+                row.className = "old-book";
+            } else {
+                row.className = "new-book";
+            }
+
+            // Insert cells
+            let titleCell = document.createElement("td");
+            let yearCell = document.createElement("td");
+            titleCell.textContent = title;
+            yearCell.textContent = year;
+
+            row.appendChild(titleCell);
+            row.appendChild(yearCell);
+
+            table.appendChild(row);
+
+            // Clear fields
+            document.getElementById("title").value = "";
+            document.getElementById("year").value = "";
+        }
+    </script>
+
+</body>
+</html>
