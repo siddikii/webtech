@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Information Boxes</title>
+
+    <style>
+        .product-box {
+            display: inline-block;
+            width: 250px;
+            border: 2px solid #aaa;
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin: 15px;
+            text-align: center;
+            border-radius: 10px;
+            transition: 0.3s;
+            outline: 0px solid transparent;
+            outline-offset: 5px;
+        }
+
+        .product-box:hover {
+            outline: 3px solid #333;
+        }
+
+        .product-box img {
+            width: 120px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .product-box a {
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 8px 12px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        .product-box a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="text-align:center;">Product Information Boxes</h1>
+
+    <!-- Product 1 -->
+    <div class="product-box">
+        <img src="https://i.imgur.com/2xKfJ2H.png" alt="Laptop">
+        <h2>Laptop Pro</h2>
+        <p>Powerful performance with 8GB RAM and 512GB SSD.</p>
+        <p><strong>$899</strong></p>
+        <a href="#">Buy Now</a>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-box">
+        <img src="https://i.imgur.com/S2yJtKq.png" alt="Headphones">
+        <h2>Wireless Headphones</h2>
+        <p>Noise-cancelling, 20-hour battery life, premium sound.</p>
+        <p><strong>$129</strong></p>
+        <a href="#">Buy Now</a>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-box">
+        <img src="https://i.imgur.com/UDf0p1Y.png" alt="Smartwatch">
+        <h2>Smartwatch Fit+</h2>
+        <p>Heart-rate tracking, fitness modes & long battery life.</p>
+        <p><strong>$149</strong></p>
+        <a href="#">Buy Now</a>
+    </div>
+
+</body>
+</html>
